@@ -1,0 +1,20 @@
+<body>
+  <div class="nav">
+    <header>
+      <input type="search" class="search-box" placeholder="Şehir ismi girin..." [(ngModel)]="city"
+        (keyup.enter)="getWeather()" />
+    </header>
+    <main>
+      <section class="location">
+        <div *ngIf="weatherData">
+          <div class="city">{{ weatherData.sys.country }}</div>
+          <div class="city">{{ weatherData.name | uppercase }}</div>
+          <div class="city">
+            {{ weatherData.weather[0].description | uppercase }}
+          </div>
+          <div class="city">{{ weatherData.main.temp }}°C</div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
